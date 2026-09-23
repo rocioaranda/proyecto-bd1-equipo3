@@ -1,3 +1,12 @@
+Sistema de Gestión para Casa de Repuestos y Accesorios Automotrices - Byte Motors
+
+Integrantes:
+-Aranda, Rocío
+-González, Rodrigo Exequiel
+-Lopez, Fernando
+-Luque, Emmanuel
+-Romero, Cristian
+
 Descripción del caso:
 El presente proyecto aborda el diseño e implementación de una base de datos relacional
 orientada a optimizar la gestión operativa de una casa comercializadora de repuestos y
