@@ -105,6 +105,45 @@ CREATE TABLE Productos (
         ON UPDATE NO ACTION
 );
 ----------------------------------------------------------------
+CREATE TABLE Metodo_De_Pago (
+    Cod_Metodo_Pago INT IDENTITY(1,1) ,
+    descripcion VARCHAR(50) NOT NULL,
+
+    estado VARCHAR(20) DEFAULT 'ACTIVO' CHECK (estado IN ('ACTIVO', 'INACTIVO')),
+
+    CONSTRAINT PK_Cod_Metodo_Pago PRIMARY KEY (Cod_Metodo_Pago)
+);
+
+CREATE TABLE Transacciones (
+    Cod_Transaccion INT IDENTITY(1,1) NOT NULL,
+    Fecha DATE NOT NULL ,
+    Cod_Cliente INT NOT NULL,
+    Cod_Vendedor INT NOT NULL,
+    Cod_Metodo_Pago INT NOT NULL,
+
+    CONSTRAINT PK_Cod_Transaccion PRIMARY KEY (Cod_Transaccion), --DEFINIMOS LA CLAVE PRIMARIA DE NUESTRA TABLA
+
+    --LA TABLA 'Transcciones' CONSTA DE TRES CLAVES FORANEAS
+    CONSTRAINT FK_Transacciones_Clientes 
+        FOREIGN KEY (cod_cliente) 
+        REFERENCES Clientes(cod_cliente)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION,
+
+    CONSTRAINT FK_Transacciones_Vendedores 
+        FOREIGN KEY (cod_vendedor) 
+        REFERENCES Vendedores(cod_vendedor)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION,
+
+    CONSTRAINT FK_Transacciones_MetodoPago 
+        FOREIGN KEY (cod_metodo_pago) 
+        REFERENCES Metodo_De_Pago(cod_metodo_pago)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+
+);
+
 
 
 
