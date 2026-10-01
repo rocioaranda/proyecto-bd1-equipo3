@@ -50,6 +50,63 @@ SELECT * FROM Vendedores
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+CREATE TABLE Proveedores (
+    Cod_Proveedor INT IDENTITY(1,1) NOT NULL,
+    CUIT VARCHAR(11) NOT NULL UNIQUE,
+
+    CONSTRAINT PK_Cod_Proveedor
+        PRIMARY KEY (Cod_Proveedor)
+);
+
+CREATE TABLE Proveedor_Persona (
+    Cod_Proveedor INT NOT NULL,
+    Nombre VARCHAR(50) NOT NULL,
+    Apellido VARCHAR(50) NOT NULL,
+
+    CONSTRAINT PK_Proveedor_Persona
+        PRIMARY KEY (Cod_Proveedor),
+
+    CONSTRAINT FK_Proveedor_Persona_Proveedor
+        FOREIGN KEY (Cod_Proveedor)
+        REFERENCES Proveedores(Cod_Proveedor)
+        ON DELETE CASCADE
+        ON UPDATE NO ACTION
+);
+
+CREATE TABLE Proveedor_Empresa (
+    Cod_Proveedor INT NOT NULL,
+    Razon_Social VARCHAR(100) NOT NULL,
+
+    CONSTRAINT PK_Proveedor_Empresa
+        PRIMARY KEY (Cod_Proveedor),
+
+    CONSTRAINT FK_Proveedor_Empresa_Proveedor
+        FOREIGN KEY (Cod_Proveedor)
+        REFERENCES Proveedores(Cod_Proveedor)
+        ON DELETE CASCADE
+        ON UPDATE NO ACTION
+);
+
+CREATE TABLE Productos (
+    Cod_Producto INT IDENTITY(1,1) NOT NULL,
+    categoria VARCHAR(50) NOT NULL,
+    marca VARCHAR(50) NOT NULL,
+    Stock_Disponible INT NOT NULL CHECK (Stock_disponible >= 0), --PONEMOS LA CONDICION QUE EL STOCK SEA NO NEGATIVO
+    Stock_Minimo INT NOT NULL CHECK (Stock_minimo > 0),  --PONEMOS LA CONDICION DE QUE EL STOCK SEA MAYOR A CERO
+    cod_Proveedor INT NOT NULL,  --ESTA VA A SER NUESTRA CLAVE FORANEA 
+
+    CONSTRAINT PK_Cod_Producto
+        PRIMARY KEY (Cod_Producto), --DEFINIMOS SU CLAVE PRIMARIA 
+
+    CONSTRAINT FK_Productos_Proveedores 
+        FOREIGN KEY (cod_Proveedor) 
+        REFERENCES Proveedores(cod_Proveedor)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+);
+----------------------------------------------------------------
+
+
 
 
 
