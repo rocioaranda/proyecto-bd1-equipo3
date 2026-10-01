@@ -144,6 +144,29 @@ CREATE TABLE Transacciones (
 
 );
 
+CREATE TABLE Detalle (
+    cod_transaccion INT NOT NULL,
+    cod_producto INT NOT NULL,
+
+    Cantidad INT NOT NULL CHECK (Cantidad > 0),
+    Precio_unitario DECIMAL(10,2) NOT NULL CHECK (Precio_unitario > 0),
+
+    CONSTRAINT PK_Detalle
+        PRIMARY KEY (cod_transaccion, cod_producto),
+
+    CONSTRAINT FK_Detalle_Productos
+        FOREIGN KEY (cod_producto)
+        REFERENCES Productos(cod_producto)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION, 
+
+    CONSTRAINT FK_Detalle_Transacciones
+        FOREIGN KEY (cod_transaccion)
+        REFERENCES Transacciones(cod_transaccion)
+        ON DELETE CASCADE
+        ON UPDATE NO ACTION
+);
+
 
 
 
