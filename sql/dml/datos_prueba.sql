@@ -25,6 +25,10 @@ VALUES
     ('Agustin', 'Morales', 'Calle Salta 580'),
     ('Carolina', 'Vega', 'Calle Mendoza 310');
 
+
+
+
+
 INSERT INTO Proveedores (CUIT) VALUES
 ('20301234561'), ('20284567892'), ('20329876543'), ('27351112224'),
 ('20273334445'), ('27365556666'), ('20317778887'), ('27389990008'),
