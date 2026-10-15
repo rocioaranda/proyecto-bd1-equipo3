@@ -8,7 +8,7 @@
 
 ---
 
-### 🕹️ Navegación del Proyecto (Botonera)
+### 🕹️ Navegación del Proyecto
 <div align="center">
 
 [![Descripción](https://img.shields.io/badge/📖_Descripción-2b3137?style=for-the-badge)](#descripcion)
