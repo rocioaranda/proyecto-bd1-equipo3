@@ -1,14 +1,24 @@
+<div align="center">
+
 # 🚗 Byte Motors - Sistema de Gestión Automotriz 🛠️
+
+</div>
+
+<div align="center">
 
 ![Estado](https://img.shields.io/badge/Estado-En_Desarrollo-success?style=for-the-badge)
 ![Base de Datos](https://img.shields.io/badge/Base_de_Datos-Relacional-blue?style=for-the-badge)
 ![Materia](https://img.shields.io/badge/Materia-BDI_UNNE-orange?style=for-the-badge)
 
-> **Nota del proyecto:** Este repositorio contiene el diseño e implementación de una base de datos relacional orientada a optimizar la gestión operativa de una casa comercializadora de repuestos y accesorios del rubro automotriz.
+> Este repositorio contiene el diseño e implementación de una base de datos relacional orientada a optimizar la gestión operativa de una casa comercializadora de repuestos y accesorios del rubro automotriz.
+</div>
 
 ---
-
-## 🕹️ Navegación del Proyecto
+<div align="center">
+  
+ ## 🕹️ Navegación del Proyecto
+ 
+</div>
 
 <div align="center">
 
@@ -28,11 +38,11 @@ El sistema centraliza la información comercial para facilitar la búsqueda de r
 
 ## 👥 Equipo de Desarrollo
 
-El equipo **Byte Motors** está integrado por:
+El equipo está integrado por:
 
 - 👨‍💻 Aranda Rocio
 - 👨‍💻 Gonzalez Rodrigo Exequiel
-- 👨‍💻 Lopez Fernando
+- 👨‍💻 López Fernando
 - 👨‍💻 Luque Tourn Emmanuel
 - 👨‍💻 Romero Cristian
 
