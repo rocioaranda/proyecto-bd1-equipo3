@@ -15,6 +15,7 @@ SELECT
     v.nombre + ' ' + v.apellido                         AS Vendedor,
     mp.descripcion                                      AS Metodo_De_Pago,
     p.categoria + ' ' + p.marca                         AS Producto,
+    p.descripcion,
     d.Cantidad,
     d.Precio_unitario,
     d.Cantidad * d.Precio_unitario                      AS Subtotal_Renglon,
