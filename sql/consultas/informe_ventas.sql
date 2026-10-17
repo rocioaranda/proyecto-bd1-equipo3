@@ -15,3 +15,22 @@ WHERE t.Fecha BETWEEN @desde AND @hasta
 GROUP BY v.Cod_Vendedor, v.nombre, v.apellido
 ORDER BY Total_Vendido DESC;
 GO
+
+-- total de ventas por CATEGORIA de producto
+DECLARE @desde DATE = '2026-08-01';
+DECLARE @hasta DATE = '2026-09-30';
+
+SELECT
+    p.categoria,
+    COUNT(DISTINCT t.Cod_Transaccion)                   AS Cant_Ventas,
+    SUM(d.Cantidad)                                     AS Unidades_Vendidas,
+    SUM(d.Cantidad * d.Precio_unitario)                 AS Total_Vendido
+FROM Productos p
+INNER JOIN Detalle       d ON d.cod_producto    = p.Cod_Producto
+INNER JOIN Transacciones t ON t.Cod_Transaccion = d.cod_transaccion
+WHERE t.Fecha BETWEEN @desde AND @hasta
+GROUP BY p.categoria
+ORDER BY Total_Vendido DESC;
+GO
+
+
