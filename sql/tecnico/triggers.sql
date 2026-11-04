@@ -1,3 +1,6 @@
+USE Byte_Motors;
+GO
+
 -- 1. CREACIÓN DE LA TABLA DE AUDITORÍA DE PRODUCTOS
 
 CREATE TABLE auditoria_producto (
@@ -36,11 +39,34 @@ BEGIN
         i.Cod_Producto,
         d.categoria,
         i.categoria,
-        -- Como la tabla Productos no tiene columna 'precio' directa sino en detalle, 
-        -- simulamos el registro del cambio tomando datos de categoría/stock :
-        0.00, -- Precio anterior simulado 
-        0.00  -- Precio nuevo simulado
+        d.Precio,  -- Valor del precio ANTES de la modificación
+        i.Precio   -- Valor del precio NUEVO tras la modificación
     FROM INSERTED i
     INNER JOIN DELETED d ON i.Cod_Producto = d.Cod_Producto;
 END;
 GO
+
+
+-- 3.  PRUEBAS
+-- A. Ver el estado inicial de un producto
+SELECT Cod_Producto, categoria, Precio, Stock_Disponible FROM Productos WHERE Cod_Producto = 1;
+GO
+
+-- B. Realizar una actualización (Modificar el precio del producto 1)
+UPDATE Productos
+SET Precio = 19500.00
+WHERE Cod_Producto = 1;
+GO
+
+-- C. Consultar la tabla de auditoría para verificar la trazabilidad real
+SELECT 
+    id_auditoria,
+    fecha_cambio,
+    usuario,
+    tipo_operacion,
+    Cod_Producto,
+    precio_anterior,
+    precio_nuevo
+FROM auditoria producto;
+GO
+
