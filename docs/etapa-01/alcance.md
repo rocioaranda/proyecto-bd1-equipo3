@@ -1,19 +1,43 @@
-El sistema contempla las siguientes funcionalidades dentro de su dominio de aplicación:
+# 🎯 Alcance del Sistema - Byte Motors
 
-Dentro del alcance:
+El presente documento establece los límites operacionales del sistema **Byte Motors**, especificando las capacidades funcionales incluidas en el desarrollo y los módulos excluidos de esta etapa.
 
-1. Gestión de inventario: Alta, baja y modificación de productos, categorías, marcas y
-proveedores.
-2. Control de existencias: Seguimiento del stock disponible y stock mínimo.
-3. Gestión de clientes y vendedores: Registro de datos filiatorios y de contacto.
-4. Registro de ventas: Transacciones con detalle de cabecera (fecha, cliente, vendedor,
-método de pago) y líneas de detalle (producto, cantidad, precio unitario aplicado).
-5. Actualización automática de stock en función de las ventas realizadas.
+---
 
+## ✅ Dentro del Alcance 
 
-Fuera del alcance:
+1. **Gestión de Inventario:**
+   * Alta, baja y modificación de productos.
+   * Administración de categorías, marcas y proveedores.
 
-1. Módulo de contabilidad avanzada y balances financieros.
-2. Liquidación de sueldos y salarios del personal.
-3. Integración con AFIP para facturación electrónica.
-4. Gestión de servicios de taller mecánico o turnos de reparación
+2. **Control de Existencias:**
+   * Seguimiento continuo del stock disponible en depósito.
+   * Control y alertas sobre límites de stock mínimo.
+
+3. **Gestión de Clientes y Vendedores:**
+   * Registro y actualización de datos filiatorios.
+   * Administración de datos de contacto operativos.
+
+4. **Registro de Ventas:**
+   * Emisión de transacciones con estructura cabecera-detalle.
+   * **Cabecera:** Fecha, cliente, vendedor y método de pago.
+   * **Líneas de Detalle:** Producto, cantidad y precio unitario aplicado al momento de la venta.
+
+5. **Actualización Automática de Inventario:**
+   * Descuento en tiempo real del stock de productos según las líneas de detalle procesadas.
+
+---
+
+## 🚫 Fuera del Alcance 
+
+1. **Módulo de Contabilidad Avanzada:**
+   * Generación de balances financieros, libros contables y auditorías impositivas.
+
+2. **Gestión de Recursos Humanos:**
+   * Liquidación de sueldos, jornales y salarios del personal.
+
+3. **Integración Fiscal:**
+   * Facturación electrónica directa mediante webservices de AFIP / ARCA.
+
+4. **Gestión de Servicios de Taller:**
+   * Administración de turnos de reparación, órdenes de trabajo mecánicas o servicios posventa.
