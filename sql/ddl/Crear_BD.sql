@@ -166,7 +166,10 @@ CREATE TABLE Detalle (
         ON DELETE CASCADE
         ON UPDATE NO ACTION
 );
-
+-- Agrego nuevo columna a la tabla para permitir mejor identificacion de los productos,
+-- permito NULL para no tener conflictos con los valores cargados
+ALTER TABLE Productos
+ADD Descripcion VARCHAR(150) NULL;  
 
 
 

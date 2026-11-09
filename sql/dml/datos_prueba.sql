@@ -111,6 +111,90 @@ INSERT INTO Detalle (cod_transaccion, cod_producto, Cantidad, Precio_unitario) V
 (10, 7, 1,  67000.00),
 (10, 4, 1, 120000.00);
 
+--actualizacion de tabla productos
+UPDATE Productos
+SET descripcion = CASE
+    WHEN categoria = 'Lubricantes' AND marca = 'Shell'
+        THEN 'Aceite sintético 10W-50'
+    WHEN categoria = 'Frenos' AND marca = 'Brembo'
+        THEN 'Pastillas de freno delanteras'
+    WHEN categoria = 'Neumáticos' AND marca = 'Pirelli'
+        THEN '195/65 R15'
+    WHEN categoria = 'Baterías' AND marca = 'Bosch'
+        THEN '12V 65Ah'
+    WHEN categoria = 'Filtros' AND marca = 'Mann-Filter'
+        THEN 'Filtro de aceite'
+    WHEN categoria = 'Iluminación' AND marca = 'Philips'
+        THEN 'Lámpara LED H7'
+    WHEN categoria = 'Suspensión' AND marca = 'Monroe'
+        THEN 'Amortiguador delantero'
+    WHEN categoria = 'Accesorios' AND marca = '3M'
+        THEN 'Cinta aisladora automotriz'
+    WHEN categoria = 'Encendido' AND marca = 'NGK'
+        THEN 'Bujía de encendido'
+    WHEN categoria = 'Refrigeración' AND marca = 'Gates'
+        THEN 'Manguera de refrigeración'
+    ELSE descripcion
+END
+WHERE descripcion IS NULL;
+
+-- agregado de nuevos productos
+
+
+INSERT INTO Productos
+    (categoria, marca, Descripcion, Stock_Disponible, Stock_Minimo, cod_Proveedor)
+VALUES
+-- Lubricantes - Shell
+('Lubricantes', 'Shell', 'Aceite sintético 5W-30', 80, 15, 9),
+('Lubricantes', 'Shell', 'Aceite sintético 10W-40', 65, 15, 9),
+('Lubricantes', 'Shell', 'Aceite sintético 10W-50', 50, 10, 9),
+
+-- Frenos - Brembo
+('Frenos', 'Brembo', 'Pastillas de freno delanteras', 35, 8, 10),
+('Frenos', 'Brembo', 'Pastillas de freno traseras', 30, 8, 10),
+('Frenos', 'Brembo', 'Disco de freno ventilado', 20, 5, 10),
+
+-- Neumáticos - Pirelli
+('Neumáticos', 'Pirelli', 'Neumático 175/65 R14', 24, 6, 11),
+('Neumáticos', 'Pirelli', 'Neumático 185/60 R15', 20, 6, 11),
+('Neumáticos', 'Pirelli', 'Neumático 195/65 R15', 16, 4, 11),
+
+-- Baterías - Bosch
+('Baterías', 'Bosch', 'Batería 12V 45Ah', 18, 4, 12),
+('Baterías', 'Bosch', 'Batería 12V 65Ah', 14, 4, 12),
+('Baterías', 'Bosch', 'Batería 12V 75Ah', 10, 3, 12),
+
+-- Filtros - Mann-Filter
+('Filtros', 'Mann-Filter', 'Filtro de aceite', 90, 20, 13),
+('Filtros', 'Mann-Filter', 'Filtro de aire de motor', 70, 15, 13),
+('Filtros', 'Mann-Filter', 'Filtro de combustible', 60, 15, 13),
+
+-- Iluminación - Philips
+('Iluminación', 'Philips', 'Lámpara halógena H4 12V', 45, 10, 14),
+('Iluminación', 'Philips', 'Lámpara halógena H7 12V', 40, 10, 14),
+('Iluminación', 'Philips', 'Lámpara LED automotriz H7', 25, 5, 14),
+
+-- Suspensión - Monroe
+('Suspensión', 'Monroe', 'Amortiguador delantero', 16, 4, 15),
+('Suspensión', 'Monroe', 'Amortiguador trasero', 14, 4, 15),
+('Suspensión', 'Monroe', 'Kit de montaje de amortiguador', 12, 3, 15),
+
+-- Accesorios - 3M
+('Accesorios', '3M', 'Cinta aisladora automotriz', 80, 15, 16),
+('Accesorios', '3M', 'Cinta doble faz automotriz', 55, 10, 16),
+('Accesorios', '3M', 'Adhesivo sellador automotriz', 35, 8, 16),
+
+-- Encendido - NGK
+('Encendido', 'NGK', 'Bujía estándar', 100, 20, 1),
+('Encendido', 'NGK', 'Bujía de iridio', 65, 15, 1),
+('Encendido', 'NGK', 'Juego de 4 bujías', 30, 8, 1),
+
+-- Refrigeración - Gates
+('Refrigeración', 'Gates', 'Manguera superior de radiador', 25, 6, 5),
+('Refrigeración', 'Gates', 'Manguera inferior de radiador', 22, 6, 5),
+('Refrigeración', 'Gates', 'Correa de accesorios', 30, 8, 5);
+
+
 
 
 
