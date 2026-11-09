@@ -1,6 +1,8 @@
 <div align="center">
-
+  
 # 🚗 Byte Motors - Sistema de Gestión Automotriz 🛠️
+  
+<img width="3584" height="1184" alt="Gemini_Generated_Image_42fieo42fieo42fi (1)" src="https://github.com/user-attachments/assets/035650b3-bf62-4c94-b844-5d4672c94f38" />
 
 </div>
 
