@@ -6,7 +6,7 @@ Esta etapa comprende la especificación inicial del sistema de información para
 
 ## 📚 Documentos de la Etapa
 
-* [📝 Descripción del Caso](./descripcion%20del%20caso.md): Contexto comercial de Byte Motors y análisis de problemas a resolver.
+* [📝 Descripción del Caso](./Descripcion-caso.md): Contexto comercial de Byte Motors y análisis de problemas a resolver.
 * [📜 Reglas de Negocio](./Reglas-negocio.md): Restricciones y condiciones operativas del dominio de venta de autopartes.
 * [🎯 Alcance del Sistema](./alcance.md): Funcionalidades incluidas y excluidas en el desarrollo.
 
