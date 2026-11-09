@@ -1,15 +1,14 @@
+# 🛠️ Etapa 03: Implementación y Restricciones de la Base de Datos
 
-# ⚙️ Etapa 03: Implementación del Modelo Físico
-
-En esta etapa se documenta cómo el modelo lógico derivado de la Etapa 2 fue llevado formalmente al Motor **SQL Server Express**, garantizando restricciones de integridad relacional.
+Esta etapa detalla la transformación del modelo lógico al modelo físico en SQL Server, definiendo la creación de tablas, la aplicación de restricciones de integridad y las pruebas de validación del sistema **Byte_Motors**.
 
 ---
 
-## 📋 Puntos Clave de la Implementación
+## 📚 Documentos de la Etapa
 
-1. **Creación de Tablas:** Mapeo de claves primarias (`IDENTITY`) y claves foráneas (`FOREIGN KEY`).
-2. **Restricciones de Integridad:** Aplicación de cláusulas `CHECK` (stock positivo, precios `>= 0`) y claves únicas `UNIQUE` (DNI/CUIT).
-3. **Evolución del Esquema:** Adición de la columna `Descripcion` y la columna clave `Precio` a la tabla `Productos`.
+- [🏗️ Implementación Física](./implementacion.md): Mapeo del modelo relacional al SGBD, orden de creación de tablas, tipos de datos seleccionados y decisiones de diseño como el manejo de especialización y la eliminación en cascada.
+- [🔒 Restricciones de Integridad](./restricciones-integridad.md): Definición detallada de la integridad de entidad (claves primarias), integridad referencial (claves foráneas) e integridad de dominio (`CHECK`, `UNIQUE`, `DEFAULT` y `NOT NULL`).
+- [🧪 Pruebas de Validación](./pruebas-validacion.md): Script de verificación de estructura, control de registros cargados, pruebas negativas de error esperado y pruebas de borrado en cascada mediante transacciones.
 
 ---
 
