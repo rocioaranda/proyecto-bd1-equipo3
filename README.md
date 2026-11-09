@@ -108,8 +108,8 @@ El sistema centraliza la información comercial para facilitar la búsqueda de r
 
 Para desplegar la base de datos completa en **SQL Server Express**, siga el orden estricto de los scripts ubicados en la carpeta [`/sql`](./sql/README.md):
 
-1. **Creación del Esquema:** [`sql/ddl/crear_BD.sql`](./sql/ddl/crear_BD.sql)
-2. **Carga de Datos Iniciales:** [`sql/dml/datos_pruebas.sql`](./sql/dml/datos_pruebas.sql)
+1. **Creación del Esquema:** [`sql/ddl/crear_BD.sql`](./sql/ddl/Crear_BD.sql)
+2. **Carga de Datos Iniciales:** [`sql/dml/datos_pruebas.sql`](./sql/dml/datos_prueba.sql)
 3. **Rutinas y Seguridad Avanzada:** [`sql/tecnico/`](./sql/tecnico/README.md)
 
 ---
