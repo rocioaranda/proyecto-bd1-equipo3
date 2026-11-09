@@ -1,4 +1,4 @@
-# 📁 Sección de Scripts SQL (`sql/`)
+# 📁 Sección de Scripts SQL 
 
 Esta carpeta contiene todos los scripts ejecutables en SQL Server Express para construir, poblar, consultar y optimizar la base de datos **Byte Motors**.
 
