@@ -18,8 +18,8 @@ sql/
 
 ## 🚀 Orden Recomendado de Ejecución
 
-1. [📌 **DDL:** `sql/ddl/crear_BD.sql`](./ddl/crear_BD.sql) (Crea la BD y la estructura de tablas)
-2. [📌 **DML:** `sql/dml/datos_pruebas.sql`](./dml/datos_pruebas.sql) (Pobla las tablas con datos y precios)
+1. [📌 **DDL:** `sql/ddl/crear_BD.sql`](./ddl/Crear_BD.sql) (Crea la BD y la estructura de tablas)
+2. [📌 **DML:** `sql/dml/datos_pruebas.sql`](./dml/datos_prueba.sql) (Pobla las tablas con datos y precios)
 3. [📌 **TÉCNICO:** `sql/tecnico/`](./tecnico/README.md) (Compila SPs, Triggers y la Seguridad del sistema)
 4. [📌 **CONSULTAS:** `sql/consultas/`](./consultas/README.md) (Ejecuta las consultas y reportes de prueba)
 
