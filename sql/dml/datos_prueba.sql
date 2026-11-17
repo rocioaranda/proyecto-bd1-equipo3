@@ -196,5 +196,62 @@ VALUES
 
 
 
+--ACTUALIZACION DE DATOS, AGREGADO DE PRECIOS
+UPDATE Productos
+SET Precio = CASE 
+    -- Lubricantes
+    WHEN categoria = 'Lubricantes' AND Descripcion LIKE '%10W-50%' THEN 18500.50
+    WHEN categoria = 'Lubricantes' AND Descripcion LIKE '%5W-30%'  THEN 17500.00
+    WHEN categoria = 'Lubricantes' AND Descripcion LIKE '%10W-40%' THEN 16800.00
+    
+    -- Frenos
+    WHEN categoria = 'Frenos' AND Descripcion LIKE '%delanteras%' THEN 42000.00
+    WHEN categoria = 'Frenos' AND Descripcion LIKE '%traseras%'   THEN 38000.00
+    WHEN categoria = 'Frenos' AND Descripcion LIKE '%Disco%'       THEN 55000.00
+    
+    -- Neumáticos
+    WHEN categoria = 'Neumáticos' AND Descripcion LIKE '%R14%' THEN 78000.00
+    WHEN categoria = 'Neumáticos' AND Descripcion LIKE '%185%' THEN 86000.00
+    WHEN categoria = 'Neumáticos' AND Descripcion LIKE '%195%' THEN 95000.00
+    
+    -- Baterías
+    WHEN categoria = 'Baterías' AND Descripcion LIKE '%45Ah%' THEN 98000.00
+    WHEN categoria = 'Baterías' AND Descripcion LIKE '%65Ah%' THEN 120000.00
+    WHEN categoria = 'Baterías' AND Descripcion LIKE '%75Ah%' THEN 145000.00
+    
+    -- Filtros
+    WHEN categoria = 'Filtros' AND Descripcion LIKE '%aceite%'      THEN 8500.00
+    WHEN categoria = 'Filtros' AND Descripcion LIKE '%aire%'        THEN 12000.00
+    WHEN categoria = 'Filtros' AND Descripcion LIKE '%combustible%' THEN 14500.00
+    
+    -- Iluminación
+    WHEN categoria = 'Iluminación' AND Descripcion LIKE '%H4%'  THEN 4500.00
+    WHEN categoria = 'Iluminación' AND Descripcion LIKE '%H7%' AND Descripcion LIKE '%halógena%' THEN 5200.00
+    WHEN categoria = 'Iluminación' AND Descripcion LIKE '%LED%' THEN 15000.75
+    
+    -- Suspensión
+    WHEN categoria = 'Suspensión' AND Descripcion LIKE '%delantero%' THEN 67000.00
+    WHEN categoria = 'Suspensión' AND Descripcion LIKE '%trasero%'   THEN 61000.00
+    WHEN categoria = 'Suspensión' AND Descripcion LIKE '%Kit%'       THEN 24000.00
+    
+    -- Accesorios
+    WHEN categoria = 'Accesorios' AND Descripcion LIKE '%aisladora%' THEN 5200.00
+    WHEN categoria = 'Accesorios' AND Descripcion LIKE '%doble faz%' THEN 8400.00
+    WHEN categoria = 'Accesorios' AND Descripcion LIKE '%sellador%'  THEN 12500.00
+    
+    -- Encendido
+    WHEN categoria = 'Encendido' AND Descripcion LIKE '%estándar%'  THEN 3800.50
+    WHEN categoria = 'Encendido' AND Descripcion LIKE '%iridio%'    THEN 8900.00
+    WHEN categoria = 'Encendido' AND Descripcion LIKE '%Juego%'     THEN 15000.00
+    
+    -- Refrigeración
+    WHEN categoria = 'Refrigeración' AND Descripcion LIKE '%superior%' THEN 22500.00
+    WHEN categoria = 'Refrigeración' AND Descripcion LIKE '%inferior%' THEN 21000.00
+    WHEN categoria = 'Refrigeración' AND Descripcion LIKE '%Correa%'   THEN 18500.00
+    
+    -- Precio por defecto para cualquier otro ítem que no haya matcheado arriba
+    ELSE 15000.00
+END;
+GO
 
 
