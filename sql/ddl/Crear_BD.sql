@@ -171,6 +171,12 @@ CREATE TABLE Detalle (
 ALTER TABLE Productos
 ADD Descripcion VARCHAR(150) NULL;  
 
+--agrego nueva columna a la tabla productos, ya que no contabamos con el precio de los productos
+ALTER TABLE Productos
+ADD Precio DECIMAL(10,2) NOT NULL 
+    CONSTRAINT DF_Productos_Precio DEFAULT 0.00 
+    CONSTRAINT CHK_Productos_Precio CHECK (Precio >= 0);
+
 
 
 
